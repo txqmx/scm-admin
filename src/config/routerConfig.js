@@ -23,6 +23,15 @@ let RouterConfig = [ // 走layout中的路由
         filePath: 'views/home1/page1.vue',
         noAuth: true, // 是否跳过权限控制, type=view 有效
         inNav: true
+      },
+      {
+        title: 'page2',
+        type: 'view', // 默认当view处理
+        name: '/home1/page2',
+        path: '/home1/page2',
+        filePath: 'views/home1/page2.vue',
+        noAuth: true, // 是否跳过权限控制, type=view 有效
+        inNav: true
       }
     ]
   }

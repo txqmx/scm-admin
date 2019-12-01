@@ -32,7 +32,20 @@ const routes = [
   }
 ]
 
-export default new Router({
+const router = new Router({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  if (to.meta && !to.meta.isAuth) {
+    if (!to.meta.noAuth) {
+      next({ path: '/noAuthority' })
+      return
+    }
+  }
+  next()
+})
+
+export default router
